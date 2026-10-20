@@ -56,9 +56,13 @@ div[data-baseweb="select"] > div {
 </style>
 """, unsafe_allow_html=True)
 
-model = joblib.load( "KNN_heart.pkl")
-scaler = joblib.load( "scaler.pkl")
-expected_columns = joblib.load( "columns.pkl")
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent
+
+model = joblib.load(BASE_DIR / "KNN_heart.pkl")
+scaler = joblib.load(BASE_DIR / "scaler.pkl")
+expected_columns = joblib.load(BASE_DIR / "columns.pkl")
 
 st.title("Heart Disease ")
 st.markdown("Provide the following Details")

@@ -24,7 +24,7 @@ h1 {
 /* Predict button */
 div.stButton > button {
     width: 100%;
-    background: linear-gradient(#009FDE, #8F57C7, #FA0000);
+    background: linear-gradient(#163FF5, #163FF5,#163FF5);
     color: white;
     border: none;
     border-radius: 12px;

@@ -9,49 +9,88 @@ st.set_page_config(page_title="Heart Risk Checker", page_icon="❤️", layout="
 st.markdown("""
 <style>
 
+/* Hide default Streamlit menu/footer */
+#MainMenu, footer, header {visibility: hidden;}
+
+/* Dark modern background */
 .stApp {
-    background: linear-gradient(#009FDE, #8F57C7, #FA0000);
+    background: radial-gradient(circle at 15% 0%, #1e2a4a 0%, #0b1020 55%, #070a14 100%);
     color: #e2e8f0;
+}
+
+/* Main content as a glass card */
+.block-container {
+    max-width: 760px;
+    margin-top: 2rem;
+    padding: 2.5rem 2.5rem 3rem 2.5rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
 }
 
 /* Title style */
 h1 {
     text-align: center;
-    color: #f43f5e;
     font-weight: 800;
+    background: linear-gradient(90deg, #5eead4, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle and labels */
+.stMarkdown p {
+    color: #94a3b8;
+    text-align: center;
+}
+label, label p {
+    color: #cbd5e1 !important;
+    font-weight: 600 !important;
+    text-align: left !important;
 }
 
 /* Predict button */
 div.stButton > button {
     width: 100%;
-    background: linear-gradient(#163FF5, #163FF5,#163FF5);
-    color: white;
+    background: linear-gradient(90deg, #5eead4, #818cf8);
+    color: #0b1020;
     border: none;
     border-radius: 12px;
     padding: 0.7rem;
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 700;
     transition: 0.3s;
 }
 div.stButton > button:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 20px rgba(244, 63, 94, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(129, 140, 248, 0.4);
+    color: #0b1020;
 }
+
+/* Slider handle */
 div[role="slider"] {
-    background-color: #22d3ee !important;
-    box-shadow: 0 0 10px rgba(34, 211, 238, 0.6);
+    background-color: #5eead4 !important;
+    box-shadow: 0 0 10px rgba(94, 234, 212, 0.6);
 }
 
 /* Slider ki value (number) ka color */
 div[data-testid="stSliderThumbValue"] {
-    color: #22d3ee !important;
+    color: #5eead4 !important;
 }
 
-/* Selectbox transparent */
-div[data-baseweb="select"] > div {
-    background-color: transparent !important;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+/* Selectbox and number input */
+div[data-baseweb="select"] > div,
+div[data-baseweb="input"] > div {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 10px;
+}
+
+/* Result boxes (error / success) */
+div[data-testid="stAlert"] {
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 </style>
 """, unsafe_allow_html=True)

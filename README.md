@@ -11,7 +11,7 @@
 
 ### 🔗 [Try the Live App](https://heart-disease-prediction-by-izaan.streamlit.app/)
 
-<img width="1361" height="657" alt="Image" src="https://github.com/user-attachments/assets/4180d962-d0d4-4fb3-9426-15a7409b3500" />
+<img width="1349" height="677" alt="Screenshot 2026-11-25 182612" src="https://github.com/user-attachments/assets/3e77c24b-d84a-4a8e-a407-34f593d9f1e1" />
 
 </div>
 

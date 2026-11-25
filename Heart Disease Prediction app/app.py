@@ -4,6 +4,7 @@ import joblib
 
 
 
+
 st.set_page_config(page_title="Heart Risk Checker", page_icon="❤️", layout="centered")
 
 st.markdown("""
@@ -12,89 +13,97 @@ st.markdown("""
 /* Hide default Streamlit menu/footer */
 #MainMenu, footer, header {visibility: hidden;}
 
-/* Dark modern background */
+/* Cream page background */
 .stApp {
-    background: radial-gradient(circle at 15% 0%, #1e2a4a 0%, #0b1020 55%, #070a14 100%);
-    color: #e2e8f0;
+    background: #F4EFDF;
+    color: #2B2B22;
 }
 
-/* Main content as a glass card */
+/* Main content as a light card */
 .block-container {
     max-width: 760px;
-    margin-top: 2rem;
-    padding: 2.5rem 2.5rem 3rem 2.5rem;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 24px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    margin-top: 1.5rem;
+    padding: 0 2rem 2.5rem 2rem;
+    background: #FFFBF0;
+    border: 1px solid #D8D2B8;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
-/* Title style */
+/* Title as dark green banner */
 h1 {
+    background: #1F3D2B;
+    color: #F4EFDF !important;
     text-align: center;
-    font-weight: 800;
-    background: linear-gradient(90deg, #5eead4, #818cf8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    margin: 0 -2rem 0.5rem -2rem;
+    padding: 2rem 1rem 1.2rem 1rem !important;
 }
 
-/* Subtitle and labels */
+/* Subtitle */
 .stMarkdown p {
-    color: #94a3b8;
+    color: #3F6B4F;
     text-align: center;
+    font-weight: 500;
 }
+
+/* Labels */
 label, label p {
-    color: #cbd5e1 !important;
+    color: #2B2B22 !important;
     font-weight: 600 !important;
-    text-align: left !important;
 }
 
 /* Predict button */
 div.stButton > button {
     width: 100%;
-    background: linear-gradient(90deg, #5eead4, #818cf8);
-    color: #0b1020;
+    background: #1F3D2B;
+    color: #F4EFDF;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     padding: 0.7rem;
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 600;
     transition: 0.3s;
 }
 div.stButton > button:hover {
+    background: #2F6B45;
+    color: #F4EFDF;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(129, 140, 248, 0.4);
-    color: #0b1020;
+    box-shadow: 0 6px 16px rgba(31, 61, 43, 0.3);
 }
 
 /* Slider handle */
 div[role="slider"] {
-    background-color: #5eead4 !important;
-    box-shadow: 0 0 10px rgba(94, 234, 212, 0.6);
+    background-color: #1F3D2B !important;
+    box-shadow: 0 0 0 4px rgba(47, 107, 69, 0.2);
 }
 
 /* Slider ki value (number) ka color */
 div[data-testid="stSliderThumbValue"] {
-    color: #5eead4 !important;
+    color: #1F3D2B !important;
+    font-weight: 700;
 }
 
 /* Selectbox and number input */
 div[data-baseweb="select"] > div,
 div[data-baseweb="input"] > div {
-    background-color: rgba(255, 255, 255, 0.06) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 10px;
+    background-color: #F4EFDF !important;
+    border: 1px solid #B9B394;
+    border-radius: 8px;
+    color: #2B2B22;
+}
+
+/* Dropdown menu */
+div[data-baseweb="popover"] ul {
+    background-color: #FFFBF0 !important;
 }
 
 /* Result boxes (error / success) */
 div[data-testid="stAlert"] {
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
 }
 </style>
 """, unsafe_allow_html=True)
-
 from pathlib import Path
 
 BASE_DIR = Path(__file__).parent

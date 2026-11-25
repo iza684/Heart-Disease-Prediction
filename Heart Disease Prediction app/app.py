@@ -4,54 +4,107 @@ import joblib
 
 
 
-st.set_page_config(page_title="Heart Risk Checker", page_icon="❤️", layout="centered")
+
+st.set_page_config(page_title="Heart Risk Checker", page_icon="💙", layout="centered")
 
 st.markdown("""
 <style>
 
+/* Hide default Streamlit menu/footer */
+#MainMenu, footer, header {visibility: hidden;}
+
+/* Ice blue page with soft circles and a faint heartbeat line */
 .stApp {
-    background: linear-gradient(#009FDE, #8F57C7, #FA0000);
-    color: #e2e8f0;
+    background-color: #EAF2FB;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900' preserveAspectRatio='xMidYMid slice'><circle cx='1360' cy='60' r='260' fill='%23DCE9F7'/><circle cx='60' cy='860' r='300' fill='%23D5E4F5'/><g fill='%23C6DBF1'><circle cx='170' cy='150' r='28'/><circle cx='235' cy='195' r='18'/><circle cx='120' cy='225' r='12'/><circle cx='1280' cy='740' r='28'/><circle cx='1220' cy='790' r='18'/><circle cx='1330' cy='815' r='12'/></g><polyline points='0,450 300,450 350,400 400,500 450,360 500,460 540,450 1440,450' fill='none' stroke='%23B3CDE8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #1B2B40;
 }
 
-/* Title style */
+/* Main content as a light card */
+.block-container {
+    max-width: 780px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 0 2rem 2.5rem 2rem !important;
+    background: #F8FBFF;
+    border: 1px solid #C3D3E6;
+    border-radius: 20px;
+}
+/* Title as dark navy banner */
 h1 {
+    background: #12335E;
+    color: #EAF2FB !important;
     text-align: center;
-    color: #f43f5e;
-    font-weight: 800;
+    font-weight: 700;
+    margin: 0 -2rem 0.5rem -2rem;
+    padding: 2rem 1rem 1.2rem 1rem !important;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Subtitle */
+.stMarkdown p {
+    color: #2563A8;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Labels */
+label, label p {
+    color: #1B2B40 !important;
+    font-weight: 600 !important;
 }
 
 /* Predict button */
 div.stButton > button {
     width: 100%;
-    background: linear-gradient(#009FDE, #8F57C7, #FA0000);
-    color: white;
+    background: #12335E;
+    color: #EAF2FB;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     padding: 0.7rem;
     font-size: 1.1rem;
     font-weight: 600;
     transition: 0.3s;
 }
 div.stButton > button:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 20px rgba(244, 63, 94, 0.5);
+    background: #2563A8;
+    color: #EAF2FB;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(18, 51, 94, 0.3);
 }
+
+/* Slider handle */
 div[role="slider"] {
-    background-color: #22d3ee !important;
-    box-shadow: 0 0 10px rgba(34, 211, 238, 0.6);
+    background-color: #12335E !important;
+    box-shadow: 0 0 0 4px rgba(37, 99, 168, 0.2);
 }
 
 /* Slider ki value (number) ka color */
 div[data-testid="stSliderThumbValue"] {
-    color: #22d3ee !important;
+    color: #12335E !important;
+    font-weight: 700;
 }
 
-/* Selectbox transparent */
-div[data-baseweb="select"] > div {
-    background-color: transparent !important;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 10px;
+/* Selectbox and number input */
+div[data-baseweb="select"] > div,
+div[data-baseweb="input"] > div {
+    background-color: #EAF2FB !important;
+    border: 1px solid #9DB6D3;
+    border-radius: 8px;
+    color: #1B2B40;
+}
+
+/* Dropdown menu */
+div[data-baseweb="popover"] ul {
+    background-color: #F8FBFF !important;
+}
+
+/* Result boxes (error / success) */
+div[data-testid="stAlert"] {
+    border-radius: 12px;
 }
 </style>
 """, unsafe_allow_html=True)

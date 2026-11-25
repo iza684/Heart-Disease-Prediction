@@ -9,7 +9,7 @@
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-KNN-F7931E?logo=scikit-learn&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-### 🔗 [Try the Live App][([https://your-app-name.streamlit.app](https://heart-disease-prediction-akazcmdasfu6munjt2aljs.streamlit.app/))](https://heart-disease-prediction-by-izaan.streamlit.app/)
+### 🔗 [Try the Live App](https://heart-disease-prediction-by-izaan.streamlit.app/)
 
 <img width="1361" height="657" alt="Image" src="https://github.com/user-attachments/assets/4180d962-d0d4-4fb3-9426-15a7409b3500" />
 

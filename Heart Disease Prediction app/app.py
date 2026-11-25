@@ -3,7 +3,6 @@ import pandas as pd
 import joblib
 
 
-
 st.set_page_config(page_title="Heart Risk Checker", page_icon="❤️", layout="centered")
 
 st.markdown("""
@@ -31,9 +30,7 @@ st.markdown("""
     background: #F8FBFF;
     border: 1px solid #C3D3E6;
     border-radius: 20px;
-    overflow: hidden;
 }
-
 /* Title as dark navy banner */
 h1 {
     background: #12335E;
@@ -42,6 +39,7 @@ h1 {
     font-weight: 700;
     margin: 0 -2rem 0.5rem -2rem;
     padding: 2rem 1rem 1.2rem 1rem !important;
+    border-radius: 20px 20px 0 0;
 }
 
 /* Subtitle */
@@ -142,7 +140,7 @@ with col3:
 with col4:
     oldpeak = st.slider("Oldpeak (ST Depression) ",0.0,6.0,1.0)
 
-# When Predict is clicked
+# Predict button and result at the end
 if st.button("Predict"):
 
     # Create a raw input dictionary

@@ -56,7 +56,7 @@ div[data-baseweb="select"] > div {
 </style>
 """, unsafe_allow_html=True)
 
-model = joblib.load( "KNN_heart.pkl")
+model = joblib.load( "Heart Disease Prediction app/KNN_heart.pkl")
 scaler = joblib.load( "scaler.pkl")
 expected_columns = joblib.load( "columns.pkl")
 

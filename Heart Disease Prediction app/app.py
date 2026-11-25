@@ -57,8 +57,8 @@ div[data-baseweb="select"] > div {
 """, unsafe_allow_html=True)
 
 model = joblib.load( "Heart Disease Prediction app/KNN_heart.pkl")
-scaler = joblib.load( "scaler.pkl")
-expected_columns = joblib.load( "columns.pkl")
+scaler = joblib.load( "Heart Disease Prediction app/scaler.pkl")
+expected_columns = joblib.load( "Heart Disease Prediction app/columns.pkl")
 
 st.title("Heart Disease ")
 st.markdown("Provide the following Details")
